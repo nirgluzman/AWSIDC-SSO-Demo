@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+# AWS Identity Center OAuth 2.0 Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React TypeScript application demonstrating OAuth 2.0 integration with AWS Identity Center.
+Features both public and protected routes with seamless single sign-on authentication.
 
-Currently, two official plugins are available:
+This demo showcases enterprise-grade authentication patterns for modern React applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Public Access**: Landing page accessible to all visitors.
+- **Protected Routes**: Dashboard requiring AWS Identity Center authentication.
+- **OAuth 2.0 Flow**: Standards-compliant PKCE implementation.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Live Demo
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Public URL**: [awsidcdemo.gluzman.net](https://awsidcdemo.gluzman.net)
+- **Protected Dashboard**: Accessible only after Identity Center authentication.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Quick Start
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Configure your `.env` file with AWS Identity Center OAuth 2.0 application settings.
